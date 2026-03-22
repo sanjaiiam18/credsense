@@ -9,15 +9,15 @@ export function useDemoMode() {
   return useContext(DemoContext);
 }
 
-// Pages in order with their dwell times (ms)
+// Pages in order with their dwell times (ms) — total: 185s = 3 min 5 sec
 const DEMO_FLOW = [
-  { path: "/", duration: 25000, label: "Problem & Input" },
-  { path: "/processing", duration: 20000, label: "AI Processing" },
-  { path: "/results", duration: 30000, label: "Results" },
-  { path: "/explainability", duration: 25000, label: "Explainability" },
-  { path: "/simulator", duration: 20000, label: "Simulator" },
-  { path: "/architecture", duration: 20000, label: "Architecture" },
-  { path: "/impact", duration: 20000, label: "Impact" },
+  { path: "/",              duration: 27000, label: "Problem & Input" },
+  { path: "/processing",   duration: 22000, label: "AI Processing" },
+  { path: "/results",      duration: 32000, label: "Results" },
+  { path: "/explainability", duration: 27000, label: "Explainability" },
+  { path: "/simulator",    duration: 22000, label: "Simulator" },
+  { path: "/architecture", duration: 22000, label: "Architecture" },
+  { path: "/impact",       duration: 33000, label: "Impact" },
 ];
 
 export function DemoModeProvider({ children }) {

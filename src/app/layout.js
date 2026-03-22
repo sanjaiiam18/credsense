@@ -1,34 +1,25 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata = {
-  title: "CredSense AI - Advanced Credit Analytics Platform",
-  description: "Smarter Credit Decisions with AI. A modern, AI-powered credit scoring system.",
-};
-
 import Navbar from "@/components/layout/Navbar";
 import { DemoModeProvider } from "@/components/providers/DemoModeProvider";
 
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+
+export const metadata = {
+  title: "CredSense — AI Credit Analytics for SMEs",
+  description: "AI-powered Alternative Data Credit Scoring System for SME Financing",
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-slate-50 text-foreground relative">
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background min-h-screen`}>
         <DemoModeProvider>
           <Navbar />
-          <main className="flex-1 mt-16">{children}</main>
+          <main className="pt-14 min-h-screen">
+            {children}
+          </main>
         </DemoModeProvider>
       </body>
     </html>
